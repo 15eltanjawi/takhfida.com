@@ -108,19 +108,22 @@ a { text-decoration: none; color: inherit; }
 }
 
 .cart-btn {
-  display: flex; align-items: center; gap: 6px;
-  background: linear-gradient(135deg, var(--rose), var(--orange));
-  color: #fff; border: none;
-  padding: 9px 18px; border-radius: 50px;
-  font-family: 'Cairo', sans-serif; font-size: 0.85rem; font-weight: 700;
-  cursor: pointer; transition: all .2s;
-  box-shadow: 0 4px 14px rgba(200,83,110,.3);
-}
-.cart-btn:hover { opacity: .9; transform: translateY(-1px); }
-.cart-count {
-  background: #fff; color: var(--rose); border-radius: 50%;
-  min-width: 20px; height: 20px; font-size: 0.72rem; font-weight: 800;
+  position: relative;
   display: flex; align-items: center; justify-content: center;
+  background: none; border: none; color: #111;
+  padding: 8px; border-radius: 8px;
+  cursor: pointer; transition: color .2s;
+}
+.cart-btn:hover { color: #555; }
+.cart-count {
+  position: absolute;
+  top: -4px; inset-inline-start: -4px;
+  min-width: 18px; height: 18px; padding: 0 4px;
+  background: #111; color: #fff;
+  border-radius: 50px;
+  font-size: 0.68rem; font-weight: 800; line-height: 18px;
+  text-align: center;
+  border: 2px solid #fff;
 }
 
 .hamburger {

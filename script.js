@@ -660,6 +660,7 @@ function renderCart() {
   const count = cart.reduce((s, i) => s + i.qty, 0);
   const total = getTotal();
   countEl.textContent = count;
+  countEl.style.display = count > 0 ? 'flex' : 'none';
   totalEl.textContent = `${total} ${t.currency}`;
   const mbnCount = document.getElementById('mbnCartCount');
   if (mbnCount) { mbnCount.textContent = count; mbnCount.style.display = count > 0 ? 'flex' : 'none'; }
