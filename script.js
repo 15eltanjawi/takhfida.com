@@ -716,7 +716,7 @@ function renderOrderPopupItems(t) {
     const p = products[lang].find(x => x.id === pendingOrderProductId);
     if (p) {
       const thumb = (p.images && p.images.length) ? p.images[0] : (p.img || null);
-      items = [{ thumb, emoji: p.emoji, name: p.name, qty: 1, lineTotal: p.price }];
+      items = [{ id: p.id, thumb, emoji: p.emoji, name: p.name, qty: 1, lineTotal: p.price, single: true }];
       total = p.price;
     }
   } else {
@@ -724,11 +724,13 @@ function renderOrderPopupItems(t) {
       const prod  = products[lang].find(x => x.id === i.id);
       const thumb = prod && (prod.images && prod.images.length) ? prod.images[0] : (prod?.img || null);
       return {
+        id:        i.id,
         thumb,
         emoji:     i.emoji,
         name:      lang === 'ar' ? i.name_ar : i.name_fr,
         qty:       i.qty,
         lineTotal: i.price * i.qty,
+        single:    false,
       };
     });
     total = getTotal();
@@ -744,6 +746,7 @@ function renderOrderPopupItems(t) {
       </div>
       <span class="popup-item-name">${i.name}</span>
       <span class="popup-item-price">${i.lineTotal}.00 ${t.currency}</span>
+      <button class="popup-item-remove" onclick="removeFromOrderPopup(${i.id}, ${i.single})" title="حذف">✕</button>
     </div>
   `).join('');
 
@@ -751,6 +754,18 @@ function renderOrderPopupItems(t) {
   document.getElementById('popupSubtotal').textContent   = fmt(total);
   document.getElementById('popupTotal').textContent      = fmt(total);
   document.getElementById('popupCommanderTotal').textContent = fmt(total);
+}
+
+function removeFromOrderPopup(id, isSingle) {
+  if (isSingle) {
+    closeOrderForm();
+    return;
+  }
+  cart = cart.filter(i => i.id !== id);
+  saveCart();
+  renderCart();
+  if (!cart.length) { closeOrderForm(); return; }
+  renderOrderPopupItems();
 }
 
 function orderFromCartWhatsApp() {
