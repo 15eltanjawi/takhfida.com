@@ -1145,11 +1145,9 @@ function openProductPage(id) {
   document.body.style.overflow = 'hidden';
 
   // Wire mobile sticky CTA buttons
-  const mobileCta = document.getElementById('ppMobileCta');
   const mobileCartBtn = document.getElementById('ppMobileCartBtn');
   const mobileOrderBtn = document.getElementById('ppMobileOrderBtn');
-  if (mobileCta) {
-    mobileCta.style.display = 'flex';
+  if (mobileCartBtn) {
     mobileCartBtn.textContent = t.addToCart;
     mobileOrderBtn.textContent = '🛒 ' + (lang === 'ar' ? 'اطلب الآن' : 'Commander Maintenant');
     mobileCartBtn.onclick = () => { addToCartQty(p.id); closeProductPage(); };
@@ -1162,8 +1160,6 @@ function openProductPage(id) {
 function closeProductPage() {
   document.getElementById('productPage').classList.remove('open');
   document.body.style.overflow = '';
-  const mobileCta = document.getElementById('ppMobileCta');
-  if (mobileCta) mobileCta.style.display = 'none';
   const nav = document.getElementById('mobileBottomNav');
   if (nav) nav.classList.remove('hidden');
 }

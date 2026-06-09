@@ -1206,18 +1206,21 @@ body.fr .wa-float, body:not(.fr) .wa-float { right: 24px; left: auto; }
 }
 
 /* ===================== PRODUCT PAGE MOBILE STICKY CTA ===================== */
-.pp-mobile-cta {
-  display: none;
-}
+.pp-mobile-cta { display: none; }
 @media (max-width: 768px) {
+  .product-page.open ~ .pp-mobile-cta,
   .pp-mobile-cta {
     position: fixed; bottom: 62px; left: 0; right: 0;
     z-index: 1600;
-    display: flex; gap: 10px;
+    gap: 10px;
     padding: 10px 14px;
     background: #fff;
     border-top: 1px solid #e5e7eb;
     box-shadow: 0 -2px 8px rgba(0,0,0,0.07);
+    display: none;
+  }
+  .product-page.open ~ .pp-mobile-cta {
+    display: flex;
   }
   .pp-mobile-cta-cart {
     flex: 1; background: #111; color: #fff; border: none;
@@ -1234,8 +1237,6 @@ body.fr .wa-float, body:not(.fr) .wa-float { right: 24px; left: auto; }
   }
   .pp-mobile-cta-order:hover { opacity: 0.88; }
 
-  /* Hide the in-page action buttons on mobile (use sticky bar instead) */
-  .product-page.open .pp-actions { display: none; }
   .product-page.open .pp-info-section { padding-bottom: 20px; }
 }
 
