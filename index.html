@@ -49,9 +49,10 @@
         <img src="images/logo website-modified.png" alt="تخفيضة" class="logo-img" />
       </a>
       <nav class="nav-links">
-        <a href="#products" data-i18n="navProducts">المنتجات</a>
-        <a href="#about"    data-i18n="navAbout">من نحن</a>
-        <a href="#contact"  data-i18n="navContact">تواصل معنا</a>
+        <a href="#products"       data-i18n="navProducts">المنتجات</a>
+        <a href="#about"          data-i18n="navAbout">من نحن</a>
+        <a href="#logo-portfolio" data-i18n="navLogos">معرض الشعارات</a>
+        <a href="#contact"        data-i18n="navContact">تواصل معنا</a>
       </nav>
       <button class="cart-btn" onclick="toggleCart()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -91,9 +92,10 @@
 
     <!-- القائمة الجانبية للموبايل -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#products" data-i18n="navProducts" onclick="toggleMenu()">المنتجات</a>
-      <a href="#about"    data-i18n="navAbout"    onclick="toggleMenu()">من نحن</a>
-      <a href="#contact"  data-i18n="navContact"  onclick="toggleMenu()">تواصل معنا</a>
+      <a href="#products"       data-i18n="navProducts" onclick="toggleMenu()">المنتجات</a>
+      <a href="#about"          data-i18n="navAbout"    onclick="toggleMenu()">من نحن</a>
+      <a href="#logo-portfolio" data-i18n="navLogos"    onclick="toggleMenu()">معرض الشعارات</a>
+      <a href="#contact"        data-i18n="navContact"  onclick="toggleMenu()">تواصل معنا</a>
       <div class="mobile-lang">
         <button class="lang-btn active" data-lang="ar" onclick="setLang('ar');toggleMenu()">AR</button>
         <button class="lang-btn"        data-lang="fr" onclick="setLang('fr');toggleMenu()">FR</button>
@@ -153,6 +155,26 @@
     </div>
   </section>
 
+  <!-- معرض الشعارات -->
+  <section class="logo-section" id="logo-portfolio">
+    <div class="section-header">
+      <p class="section-tag" data-i18n="logoTag">معرض الشعارات</p>
+      <h2 data-i18n="logoTitle">تصميم شعارات احترافي</h2>
+      <p class="section-sub" data-i18n="logoSub">شعارات مميزة لعلامتك التجارية بأسلوب فريد</p>
+    </div>
+    <div class="logo-filters">
+      <button class="logo-filter active" onclick="filterLogos('all')"     data-filter="all"     data-i18n="logoAll">الكل</button>
+      <button class="logo-filter"        onclick="filterLogos('minimal')" data-filter="minimal" data-i18n="logoMinimal">مينيمال</button>
+      <button class="logo-filter"        onclick="filterLogos('modern')"  data-filter="modern"  data-i18n="logoModern">عصري</button>
+      <button class="logo-filter"        onclick="filterLogos('classic')" data-filter="classic" data-i18n="logoClassic">كلاسيكي</button>
+    </div>
+    <div class="logo-grid" id="logoGrid"></div>
+    <div class="logo-section-cta">
+      <p class="logo-cta-text" data-i18n="logoCtaText">هل تريد شعاراً مميزاً لعلامتك التجارية؟</p>
+      <a href="https://wa.me/212675450302" class="btn-primary" target="_blank" data-i18n="logoCtaBtn">اطلب شعارك الآن</a>
+    </div>
+  </section>
+
   <!-- تواصل معنا -->
   <section class="contact-section" id="contact">
     <div class="section-header">
@@ -194,9 +216,10 @@
       </div>
       <div class="footer-links">
         <h4 data-i18n="footerQ">روابط سريعة</h4>
-        <a href="#products" data-i18n="footerProducts">المنتجات</a>
-        <a href="#about"    data-i18n="footerAbout">من نحن</a>
-        <a href="#contact"  data-i18n="footerContact">تواصل معنا</a>
+        <a href="#products"       data-i18n="footerProducts">المنتجات</a>
+        <a href="#about"          data-i18n="footerAbout">من نحن</a>
+        <a href="#logo-portfolio" data-i18n="footerLogos">معرض الشعارات</a>
+        <a href="#contact"        data-i18n="footerContact">تواصل معنا</a>
       </div>
       <div class="footer-links">
         <h4 data-i18n="footerF">تابعونا</h4>
