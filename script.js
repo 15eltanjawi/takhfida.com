@@ -31,7 +31,7 @@ const translations = {
     tabAll: 'الكل', tabDrinks: 'مشروبات الصبار', tabSkin: 'العناية بالبشرة', tabBody: 'العناية بالجسم', tabFace: 'العناية بالوجه',
     tabBee: 'منتجات النحل', tabNutrition: 'التغذية', tabPersonal: 'العناية الشخصية',
     searchPh: 'ابحثي عن منتج...', searchNoResults: 'لا توجد نتائج تطابق بحثك.',
-    sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى', sortNameAsc: 'الاسم: أ — ي',
+    sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى',
     catMenuBtn: 'الأقسام', catPanelTitle: 'تصفح الأقسام',
     addBtn: '+ أضف',
     aboutTag: 'من نحن',
@@ -149,7 +149,7 @@ const translations = {
     tabAll: 'Tous', tabDrinks: 'Boissons Aloe', tabSkin: 'Soin de la peau', tabBody: 'Soin du corps', tabFace: 'Soin du visage',
     tabBee: 'Produits de la ruche', tabNutrition: 'Compléments', tabPersonal: 'Soins personnels',
     searchPh: 'Rechercher un produit...', searchNoResults: 'Aucun résultat pour votre recherche.',
-    sortPriceAsc: 'Prix: croissant', sortPriceDesc: 'Prix: décroissant', sortNameAsc: 'Nom: A — Z',
+    sortPriceAsc: 'Prix: croissant', sortPriceDesc: 'Prix: décroissant',
     catMenuBtn: 'Catégories', catPanelTitle: 'Parcourir les catégories',
     addBtn: '+ Ajouter',
     aboutTag: 'À propos',
@@ -473,7 +473,6 @@ function setLang(l) {
   if (si) { si.value = ''; si.placeholder = t.searchPh; }
 setEl('[data-i18n="sortPriceAsc"]', t.sortPriceAsc);
   setEl('[data-i18n="sortPriceDesc"]', t.sortPriceDesc);
-  setEl('[data-i18n="sortNameAsc"]', t.sortNameAsc);
   renderCart();
   const cp = document.getElementById('catPanel');
   if (cp && cp.classList.contains('open')) renderCatPanel();
