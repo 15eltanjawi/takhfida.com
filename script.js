@@ -1221,11 +1221,50 @@ document.addEventListener('DOMContentLoaded', () => {
   setLang('ar');
   renderCart();
   initReveal();
+  initHeroShowcase();
 });
 
 window.addEventListener('scroll', () => {
   document.querySelector('.navbar').style.boxShadow = window.scrollY > 10 ? '0 4px 24px rgba(0,0,0,.1)' : '';
 });
+
+function initHeroShowcase() {
+  const track = document.getElementById('heroShowcaseTrack');
+  const dotsEl = document.getElementById('heroShowcaseDots');
+  if (!track || !dotsEl) return;
+
+  const heroProducts = [1, 2, 3, 7, 8, 9, 11];
+  const list = products.ar;
+  const selected = heroProducts.map(id => list.find(p => p.id === id)).filter(Boolean);
+
+  selected.forEach((p, i) => {
+    const img = document.createElement('img');
+    img.src = p.images[0];
+    img.alt = p.name;
+    if (i === 0) img.classList.add('active');
+    track.appendChild(img);
+
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goHeroSlide(i));
+    dotsEl.appendChild(dot);
+  });
+
+  let current = 0;
+  function goHeroSlide(idx) {
+    const imgs = track.querySelectorAll('img');
+    const dots = dotsEl.querySelectorAll('span');
+    imgs[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = idx;
+    imgs[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  setInterval(() => {
+    goHeroSlide((current + 1) % selected.length);
+  }, 2800);
+}
 
 function initReveal() {
   const targets = document.querySelectorAll(
