@@ -15,12 +15,12 @@ const translations = {
     heroTag1: '🏷️ أسعار لا تُقاوم',
     heroTag2: '✅ منتجات أصلية 100%',
     heroPill: '✦ موزع معتمد فورير في المغرب',
-    heroH1: 'اكتشف أفضل المنتجات',
-    heroH2: 'بأفضل الأسعار',
-    heroTitle: 'اكتشف أفضل المنتجات<br/><span>بأفضل الأسعار</span>',
-    heroSub: 'مع توصيل سريع وخدمة موثوقة.',
-    heroCta: 'تسوقي الآن',
-    heroWa: 'اطلب عبر واتساب',
+    heroH1: '🛍️ منتجات مختارة بعناية',
+    heroH2: 'بأسعار لا تُنافس',
+    heroTitle: '🛍️ منتجات مختارة بعناية<br/><span>بأسعار لا تُنافس</span>',
+    heroSub: '🚚 توصيل سريع لجميع المدن &nbsp;|&nbsp; 💳 الدفع عند الاستلام',
+    heroCta: '🛒 اكتشف المنتجات',
+    heroWa: '💬 اطلب عبر واتساب',
     stat1: 'عميلة سعيدة',
     stat2: 'منتجات أصلية',
     stat3: 'خدمة العملاء',
@@ -133,12 +133,12 @@ const translations = {
     heroTag1: '🏷️ Prix imbattables',
     heroTag2: '✅ Produits 100% authentiques',
     heroPill: '✦ Distributeur agréé Forever Living au Maroc',
-    heroH1: 'Découvrez les meilleurs produits',
-    heroH2: 'aux meilleurs prix',
-    heroTitle: 'Découvrez les meilleurs produits<br/><span>aux meilleurs prix</span>',
-    heroSub: 'Avec livraison rapide et service fiable.',
-    heroCta: 'Acheter maintenant',
-    heroWa: 'Commander sur WhatsApp',
+    heroH1: '🛍️ Produits sélectionnés avec soin',
+    heroH2: 'à des prix imbattables',
+    heroTitle: '🛍️ Produits sélectionnés avec soin<br/><span>à des prix imbattables</span>',
+    heroSub: '🚚 Livraison rapide partout &nbsp;|&nbsp; 💳 Paiement à la livraison',
+    heroCta: '🛒 Découvrir les produits',
+    heroWa: '💬 Commander sur WhatsApp',
     stat1: 'Clients satisfaits',
     stat2: 'Produits originaux',
     stat3: 'Service client',
@@ -489,6 +489,19 @@ function filterProducts(cat) {
   document.querySelectorAll('.tab').forEach(b => {
     b.classList.toggle('active', b.dataset.cat === cat);
   });
+}
+
+function filterByCat(cat) {
+  const sel = document.getElementById('searchCat');
+  if (sel) { sel.value = cat; }
+  const input = document.getElementById('searchInput');
+  if (input) { input.value = ''; }
+  runSearch();
+  document.querySelectorAll('.cat-card').forEach(el => {
+    const onclick = el.getAttribute('onclick') || '';
+    el.classList.toggle('active', onclick.includes(`'${cat}'`));
+  });
+  document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
 }
 
 function runSearch() {
@@ -1207,8 +1220,20 @@ function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('
 document.addEventListener('DOMContentLoaded', () => {
   setLang('ar');
   renderCart();
+  initReveal();
 });
 
 window.addEventListener('scroll', () => {
   document.querySelector('.navbar').style.boxShadow = window.scrollY > 10 ? '0 4px 24px rgba(0,0,0,.1)' : '';
 });
+
+function initReveal() {
+  const targets = document.querySelectorAll(
+    '.trust-card, .cat-card, .review-card, .hero-content, .cats-header, .reviews-inner .section-header'
+  );
+  targets.forEach(el => el.classList.add('reveal'));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  targets.forEach(el => obs.observe(el));
+}
