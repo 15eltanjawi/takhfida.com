@@ -18,7 +18,7 @@ const translations = {
     heroH2: 'بأفضل الأسعار',
     heroTitle: 'اكتشف أفضل المنتجات<br/><span>بأفضل الأسعار</span>',
     heroSub: 'مع توصيل سريع وخدمة موثوقة.',
-    heroCta: 'تسوقي الآن',
+    heroCta: 'تسوق الآن',
     heroWa: 'اطلب عبر واتساب',
     stat1: 'عميلة سعيدة',
     stat2: 'منتجات أصلية',
@@ -30,7 +30,7 @@ const translations = {
     tabAll: 'الكل', tabDrinks: 'مشروبات الصبار', tabSkin: 'العناية بالبشرة', tabBody: 'العناية بالجسم', tabFace: 'العناية بالوجه',
     tabBee: 'منتجات النحل', tabNutrition: 'التغذية', tabPersonal: 'العناية الشخصية',
     searchPh: 'ابحثي عن منتج...', searchNoResults: 'لا توجد نتائج تطابق بحثك.',
-    sortDefault: 'الترتيب الافتراضي', sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى', sortNameAsc: 'الاسم: أ — ي',
+    sortDefault: 'الترتيب', sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى', sortNameAsc: 'الاسم: أ — ي',
     catMenuBtn: 'الأقسام', catPanelTitle: 'تصفح الأقسام',
     addBtn: '+ أضف',
     aboutTag: 'من نحن',
@@ -49,11 +49,11 @@ const translations = {
     r3: '«توصيل سريع ومنتجات أصلية. طلبت 3 منتجات وكل شيء ممتاز. سأعود للشراء مجدداً!»',
     rv1: 'مشترية موثقة', rv2: 'مشترية موثقة', rv3: 'مشترية موثقة',
     contactTag: 'تواصلي معنا',
-    contactTitle: 'اطلبي عبر واتساب',
-    contactSub: 'أرسلي لنا رسالة وسنرد عليكِ في دقائق.',
-    wa: 'واتساب', waSub: 'تحدثي معنا مباشرة',
-    call: 'اتصلي بنا', callSub: '+XXX XXX XXX XXX',
-    email: 'البريد الإلكتروني', emailSub: 'your@email.com',
+    contactTitle: 'اطلب عبر واتساب',
+    contactSub: 'أرسل لنا رسالة وسنرد عليك في دقائق.',
+    wa: 'واتساب', waSub: 'تحدث معنا مباشرة',
+    call: 'اتصل بنا', callSub: '+212 675 450 302',
+    email: 'البريد الإلكتروني', emailSub: 'el.machichti.40@gmail.com',
     footerP: 'موزع معتمد لمنتجات فورير في المغرب. منتجات أصلية 100% بأفضل الأسعار.',
     footerQ: 'روابط سريعة', footerF: 'تابعونا',
     footerProducts: 'المنتجات', footerAbout: 'من نحن', footerContact: 'تواصل معنا',
@@ -77,20 +77,13 @@ const translations = {
     waConfirm: ' درهم*\n\nالرجاء تأكيد طلبي!',
     aboutStat1: 'عميلة راضية',
     aboutStat2: 'منتجات أصلية',
-    logoTag: 'معرض الشعارات',
-    logoTitle: 'تصميم شعارات احترافي',
-    logoSub: 'شعارات مميزة لعلامتك التجارية بأسلوب فريد',
-    logoAll: 'الكل', logoMinimal: 'مينيمال', logoModern: 'عصري', logoClassic: 'كلاسيكي',
-    logoCtaText: 'هل تريد شعاراً مميزاً لعلامتك التجارية؟',
-    logoCtaBtn: 'اطلب شعارك الآن',
-    navLogos: 'معرض الشعارات', footerLogos: 'معرض الشعارات',
     // Choice panel
     choiceTitle: 'كيف تريدين الطلب؟',
     choiceSub: 'اختاري الطريقة الأنسب لكِ',
     choiceOnlineTitle: 'الطلب أونلاين',
     choiceOnlineSub: 'أدخلي بياناتك ونتصل بكِ',
     choiceWaTitle: 'واتساب',
-    choiceWaSub: 'اطلبي مباشرة عبر واتساب',
+    choiceWaSub: 'اطلب مباشرة عبر واتساب',
     backBtn: 'رجوع',
     // Online form
     orderTitle: 'تفاصيل الطلب',
@@ -169,8 +162,8 @@ const translations = {
     contactTitle: 'Commandez via WhatsApp',
     contactSub: 'Envoyez-nous un message et nous vous répondrons en quelques minutes.',
     wa: 'WhatsApp', waSub: 'Discutez avec nous directement',
-    call: 'Appelez-nous', callSub: '+XXX XXX XXX XXX',
-    email: 'Email', emailSub: 'your@email.com',
+    call: 'Appelez-nous', callSub: '+212 675 450 302',
+    email: 'Email', emailSub: 'el.machichti.40@gmail.com',
     footerP: 'Distributeur agréé Forever Living au Maroc. Produits 100% authentiques aux meilleurs prix.',
     footerQ: 'Liens rapides', footerF: 'Suivez-nous',
     footerProducts: 'Produits', footerAbout: 'À propos', footerContact: 'Contact',
@@ -194,13 +187,6 @@ const translations = {
     waConfirm: ' MAD*\n\nMerci de confirmer ma commande !',
     aboutStat1: 'Clientes satisfaites',
     aboutStat2: 'Produits originaux',
-    logoTag: 'Portfolio logos',
-    logoTitle: 'Design de logos professionnel',
-    logoSub: 'Des logos uniques pour votre marque avec un style distinctif',
-    logoAll: 'Tous', logoMinimal: 'Minimaliste', logoModern: 'Moderne', logoClassic: 'Classique',
-    logoCtaText: 'Vous souhaitez un logo unique pour votre marque ?',
-    logoCtaBtn: 'Demandez votre logo',
-    navLogos: 'Galerie logos', footerLogos: 'Galerie logos',
     // Choice panel
     choiceTitle: 'Comment voulez-vous commander ?',
     choiceSub: 'Choisissez la méthode qui vous convient',
@@ -298,59 +284,6 @@ const products = {
   ]
 };
 // ============================================================
-// LOGO PORTFOLIO DATA
-// ============================================================
-const logos = [
-  { id:1,  letters:'T',  bg:'linear-gradient(135deg,#c8536e 0%,#e8722a 100%)', category:'minimal', nameAr:'تخفيضة',       nameFr:'Takhfida',      industryAr:'تجارة إلكترونية',  industryFr:'E-commerce' },
-  { id:2,  letters:'FB', bg:'linear-gradient(135deg,#4a7c59 0%,#6eb87e 100%)', category:'modern',  nameAr:'فيتنس بلاس',   nameFr:'FitnessPlus',   industryAr:'رياضة وصحة',       industryFr:'Sport & Santé' },
-  { id:3,  letters:'L',  bg:'linear-gradient(135deg,#b8860b 0%,#c9a84c 100%)', category:'classic', nameAr:'لاكسوري',      nameFr:'Luxury',        industryAr:'موضة وأزياء',      industryFr:'Mode & Luxe' },
-  { id:4,  letters:'SK', bg:'linear-gradient(135deg,#5c6bc0 0%,#7986cb 100%)', category:'minimal', nameAr:'سكين كير',     nameFr:'SkinCare',      industryAr:'عناية بالبشرة',    industryFr:'Soins beauté' },
-  { id:5,  letters:'N',  bg:'linear-gradient(135deg,#e8722a 0%,#f4a261 100%)', category:'modern',  nameAr:'نيتشر',        nameFr:'Nature',        industryAr:'منتجات طبيعية',    industryFr:'Produits naturels' },
-  { id:6,  letters:'RB', bg:'linear-gradient(135deg,#c8536e 0%,#9c27b0 100%)', category:'classic', nameAr:'روز بيوتي',    nameFr:'Rose Beauty',   industryAr:'جمال وتجميل',      industryFr:'Beauté & Cosmétique' },
-  { id:7,  letters:'AG', bg:'linear-gradient(135deg,#00838f 0%,#4db6ac 100%)', category:'modern',  nameAr:'أرغان',        nameFr:'Argan',         industryAr:'منتجات عضوية',     industryFr:'Produits bio' },
-  { id:8,  letters:'MW', bg:'linear-gradient(135deg,#263238 0%,#546e7a 100%)', category:'minimal', nameAr:'ماركو',        nameFr:'Marco',         industryAr:'تكنولوجيا',        industryFr:'Technologie' },
-  { id:9,  letters:'ZH', bg:'linear-gradient(135deg,#b71c1c 0%,#e53935 100%)', category:'classic', nameAr:'زهور',         nameFr:'Zhoûr',         industryAr:'مطعم وكافيه',      industryFr:'Restaurant & Café' },
-];
-
-let currentLogoFilter = 'all';
-
-function renderLogoPortfolio(filter) {
-  if (filter !== undefined) currentLogoFilter = filter;
-  const grid = document.getElementById('logoGrid');
-  if (!grid) return;
-  const catLabels = {
-    minimal: { ar:'مينيمال', fr:'Minimaliste' },
-    modern:  { ar:'عصري',    fr:'Moderne' },
-    classic: { ar:'كلاسيكي', fr:'Classique' },
-  };
-  const list = currentLogoFilter === 'all' ? logos : logos.filter(l => l.category === currentLogoFilter);
-  grid.innerHTML = list.map(l => {
-    const name     = lang === 'ar' ? l.nameAr     : l.nameFr;
-    const industry = lang === 'ar' ? l.industryAr : l.industryFr;
-    const catLabel = catLabels[l.category][lang];
-    return `<div class="logo-card" data-category="${l.category}">
-      <div class="logo-preview" style="background:${l.bg}">
-        <div class="logo-preview-ring2"></div>
-        <div class="logo-preview-ring"></div>
-        <div class="logo-preview-inner"><span class="logo-letters">${l.letters}</span></div>
-      </div>
-      <div class="logo-card-body">
-        <div class="logo-name">${name}</div>
-        <div class="logo-industry">${industry}</div>
-        <div class="logo-badges"><span class="logo-badge ${l.category}">${catLabel}</span></div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function filterLogos(filter) {
-  renderLogoPortfolio(filter);
-  document.querySelectorAll('.logo-filter').forEach(b => {
-    b.classList.toggle('active', b.dataset.filter === filter);
-  });
-}
-
-// ============================================================
 // LANGUAGE STATE
 // ============================================================
 let lang = 'ar';
@@ -432,20 +365,7 @@ function setLang(l) {
   setEl('[data-i18n="footerF"]', t.footerF);
   setEl('[data-i18n="footerProducts"]', t.footerProducts);
   setEl('[data-i18n="footerAbout"]', t.footerAbout);
-  setEl('[data-i18n="footerLogos"]', t.footerLogos);
   setEl('[data-i18n="footerContact"]', t.footerContact);
-
-  setEl('[data-i18n="logoTag"]', t.logoTag);
-  setEl('[data-i18n="logoTitle"]', t.logoTitle);
-  setEl('[data-i18n="logoSub"]', t.logoSub);
-  setEl('[data-i18n="logoAll"]', t.logoAll);
-  setEl('[data-i18n="logoMinimal"]', t.logoMinimal);
-  setEl('[data-i18n="logoModern"]', t.logoModern);
-  setEl('[data-i18n="logoClassic"]', t.logoClassic);
-  setEl('[data-i18n="logoCtaText"]', t.logoCtaText);
-  setEl('[data-i18n="logoCtaBtn"]', t.logoCtaBtn);
-  setEl('[data-i18n="navLogos"]', t.navLogos);
-  renderLogoPortfolio();
   setEl('[data-i18n="ig"]', t.ig);
   setEl('[data-i18n="fb"]', t.fb);
   setEl('[data-i18n="tt"]', t.tt);
@@ -1085,7 +1005,6 @@ function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
-  renderLogoPortfolio();
   renderCart();
 });
 
