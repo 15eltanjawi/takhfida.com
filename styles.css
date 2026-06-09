@@ -266,7 +266,7 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-heading {
   font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 900;
-  color: var(--dark); line-height: 1.2; margin-bottom: 20px;
+  color: #ffffff; line-height: 1.2; margin-bottom: 20px;
 }
 .hero-gradient-text {
   background: linear-gradient(135deg, var(--rose), var(--orange));
