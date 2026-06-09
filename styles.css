@@ -185,21 +185,19 @@ a { text-decoration: none; color: inherit; }
 
 /* ===================== HERO SECTION ===================== */
 .hero-section {
-  background: url('images/home page cover.webp') center center / cover no-repeat;
-  padding: 80px 24px 100px;
-  overflow: hidden; position: relative;
-  min-height: 420px;
-  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
 }
-.hero-section::before { display: none; }
-.hero-section::after { display: none; }
-.hero-inner {
-  display: flex; align-items: center; justify-content: center; gap: 56px;
-  max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
+.hero-bg-img {
+  width: 100%; height: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
 }
-.hero-logo-wrap {
-  position: relative; flex-shrink: 0;
+.hero-logo-overlay {
+  position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
 }
 .hero-logo-aura {
   position: absolute; inset: -50px;
@@ -212,11 +210,12 @@ a { text-decoration: none; color: inherit; }
   50%      { transform: scale(1.1); opacity: .65; }
 }
 .hero-logo-big {
-  width: 220px; height: 220px; object-fit: contain; position: relative; z-index: 1;
-  filter: drop-shadow(0 8px 24px rgba(200,83,110,.25));
-  background: rgba(255,255,255,0.55);
+  width: 180px; height: 180px; object-fit: contain; position: relative; z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(200,83,110,.3));
+  background: rgba(255,255,255,0.7);
   border-radius: 50%;
   padding: 12px;
+  pointer-events: auto;
 }
 .hero-content { flex: 1; }
 .hero-pill {
@@ -909,8 +908,7 @@ body.fr .choice-arrow { transform: rotate(0deg); }
 
 @media (max-width: 768px) {
   /* Hero */
-  .hero-section { padding: 48px 16px 64px; min-height: 320px; }
-  .hero-logo-big { width: 120px; height: 120px; padding: 8px; }
+  .hero-logo-big { width: 100px; height: 100px; padding: 8px; }
   .hero-pill { font-size: 0.72rem; padding: 5px 12px; margin-bottom: 14px; }
   .hero-heading { font-size: clamp(1.6rem, 6vw, 2.4rem); margin-bottom: 14px; }
   .hero-sub { font-size: 0.9rem; margin-bottom: 24px; }

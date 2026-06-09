@@ -50,7 +50,7 @@ const translations = {
     r3: '«توصيل سريع ومنتجات أصلية. طلبت 3 منتجات وكل شيء ممتاز. سأعود للشراء مجدداً!»',
     rv1: 'مشترية موثقة', rv2: 'مشترية موثقة', rv3: 'مشترية موثقة',
     contactTag: 'تواصلي معنا',
-    contactTitle: 'اطلبي عبر واتساب',
+    contactTitle: 'اطلب عبر واتساب',
     contactSub: 'أرسلي لنا رسالة وسنرد عليكِ في دقائق.',
     wa: 'واتساب', waSub: 'تحدثي معنا مباشرة',
     call: 'اتصلي بنا', callSub: '+XXX XXX XXX XXX',
@@ -91,7 +91,7 @@ const translations = {
     choiceOnlineTitle: 'الطلب أونلاين',
     choiceOnlineSub: 'أدخلي بياناتك ونتصل بكِ',
     choiceWaTitle: 'واتساب',
-    choiceWaSub: 'اطلبي مباشرة عبر واتساب',
+    choiceWaSub: 'اطلب مباشرة عبر واتساب',
     backBtn: 'رجوع',
     // Online form
     orderTitle: 'تفاصيل الطلب',
