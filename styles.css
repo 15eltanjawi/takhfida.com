@@ -1021,3 +1021,98 @@ body.fr .choice-arrow { transform: rotate(0deg); }
   box-shadow: 0 6px 24px rgba(37,211,102,.65);
 }
 body.fr .wa-float, body:not(.fr) .wa-float { right: 24px; left: auto; }
+
+/* ===================== LOGO PORTFOLIO ===================== */
+.logo-section {
+  padding: 64px 24px 80px;
+  max-width: 1200px; margin: 0 auto;
+}
+.logo-filters {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 40px;
+}
+.logo-filter {
+  padding: 9px 22px; border-radius: 50px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff; color: var(--gray);
+  font-family: 'Cairo', sans-serif; font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all .2s; white-space: nowrap;
+}
+.logo-filter:hover { border-color: var(--rose); color: var(--rose); }
+.logo-filter.active {
+  background: linear-gradient(135deg, var(--rose), var(--orange));
+  color: #fff; border-color: transparent;
+  box-shadow: 0 4px 14px rgba(200,83,110,.3);
+}
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+.logo-card {
+  background: #fff; border-radius: var(--radius);
+  border: 1.5px solid rgba(0,0,0,.07);
+  overflow: hidden; box-shadow: var(--shadow);
+  transition: transform .25s, box-shadow .25s;
+}
+.logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+}
+.logo-preview {
+  height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.logo-preview-inner {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-letters {
+  font-size: 3.4rem; font-weight: 900; color: rgba(255,255,255,.95);
+  letter-spacing: -2px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.25);
+}
+.logo-preview-ring {
+  position: absolute;
+  width: 120px; height: 120px; border-radius: 50%;
+  border: 2.5px solid rgba(255,255,255,.22);
+  pointer-events: none;
+}
+.logo-preview-ring2 {
+  position: absolute;
+  width: 168px; height: 168px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.11);
+  pointer-events: none;
+}
+.logo-card-body {
+  padding: 16px 18px 18px;
+}
+.logo-name {
+  font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 3px;
+}
+.logo-industry {
+  font-size: 0.8rem; color: var(--gray); margin-bottom: 10px;
+}
+.logo-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.logo-badge {
+  padding: 3px 11px; border-radius: 20px;
+  font-size: 0.72rem; font-weight: 700;
+  background: var(--rose-light); color: var(--rose);
+}
+.logo-badge.modern  { background: #e8f5e9; color: var(--green); }
+.logo-badge.minimal { background: #e8eaf6; color: #5c6bc0; }
+.logo-badge.classic { background: var(--gold-light); color: var(--gold); }
+
+.logo-section-cta {
+  text-align: center; margin-top: 52px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.logo-cta-text {
+  font-size: 1.05rem; font-weight: 600; color: var(--gray);
+}
+@media (max-width: 640px) {
+  .logo-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+  .logo-preview { height: 140px; }
+  .logo-letters { font-size: 2.6rem; }
+}
