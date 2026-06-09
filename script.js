@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // TRANSLATIONS — Arabic & French
 // ============================================================
 const translations = {
@@ -626,7 +626,7 @@ function renderProducts(filter = 'all', overrideList = null) {
     const thumb = (p.images && p.images.length) ? p.images[0] : (p.img || null);
     productImagesMap[p.id] = (p.images && p.images.length > 1) ? p.images : null;
     return `
-    <div class="product-card" onclick="openModal(${p.id})" onmouseenter="startImageCycle(this,${p.id})" onmouseleave="stopImageCycle(this,${p.id})">
+    <div class="product-card" onclick="openProductPage(${p.id})" onmouseenter="startImageCycle(this,${p.id})" onmouseleave="stopImageCycle(this,${p.id})">
       <div class="product-img">
         ${thumb
           ? `<img src="${thumb}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><span class="product-emoji" style="display:none">${p.emoji}</span>`
@@ -1060,6 +1060,93 @@ function closeModal() {
   document.getElementById('productModal').classList.remove('open');
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
+}
+
+// ============================================================
+// PRODUCT FULL PAGE
+// ============================================================
+function openProductPage(id) {
+  const t = translations[lang];
+  const p = products[lang].find(x => x.id === id);
+  const imgList = (p.images && p.images.length) ? p.images : (p.img ? [p.img] : []);
+  window._ppImgList = imgList;
+  window._ppImgIdx = 0;
+
+  const sliderHTML = imgList.length
+    ? `<div class="pp-slider" style="background:${p.bg}">
+        ${imgList.length > 1 ? `<button class="pp-arrow pp-prev" onclick="slidePP(-1)">&#8249;</button>` : ''}
+        <img id="ppSliderImg" src="${imgList[0]}" alt="${p.name}" onerror="this.outerHTML='<span style=font-size:5rem>${p.emoji}</span>'" />
+        ${imgList.length > 1 ? `<button class="pp-arrow pp-next" onclick="slidePP(1)">&#8250;</button>` : ''}
+        ${imgList.length > 1 ? `<div class="pp-dots">${imgList.map((_, i) => `<span class="pp-dot${i === 0 ? ' active' : ''}" onclick="goPPSlide(${i})"></span>`).join('')}</div>` : ''}
+      </div>`
+    : `<div class="pp-emoji" style="background:${p.bg}"><span style="font-size:5rem">${p.emoji}</span></div>`;
+
+  const thumbsHTML = imgList.length > 1
+    ? `<div class="pp-thumbs">${imgList.map((img, i) =>
+        `<img src="${img}" class="pp-thumb${i === 0 ? ' active' : ''}" onclick="goPPSlide(${i})" alt="" />`
+      ).join('')}</div>`
+    : '';
+
+  document.getElementById('productPageTitle').textContent = p.name;
+  document.getElementById('productPageBody').innerHTML = `
+    <div class="pp-images-section">
+      ${thumbsHTML}
+      ${sliderHTML}
+    </div>
+    <div class="pp-info-section">
+      <div class="pp-brand">Forever Living Products</div>
+      <h2 class="pp-name">${p.name}</h2>
+      <div class="pp-price">${p.price}<span class="pp-currency"> ${t.currency}</span></div>
+      <p class="pp-desc">${p.longDesc || p.desc}</p>
+      <ul class="pp-benefits">${p.benefits.map(b => `<li>${b}</li>`).join('')}</ul>
+      <div class="pp-qty-row">
+        <span class="pp-qty-label">${lang === 'ar' ? 'الكمية :' : 'Quantité :'}</span>
+        <div class="pp-qty-controls">
+          <button class="pp-qty-btn" onclick="document.getElementById('ppQty').stepDown()">−</button>
+          <input id="ppQty" type="number" value="1" min="1" max="99" class="pp-qty-input" />
+          <button class="pp-qty-btn" onclick="document.getElementById('ppQty').stepUp()">+</button>
+        </div>
+      </div>
+      <div class="pp-actions">
+        <button class="btn-pp-cart" onclick="addToCartQty(${p.id}); closeProductPage();">
+          ${t.addToCart}
+        </button>
+        <button class="btn-pp-order" onclick="openOrderPopup(${p.id})">
+          🛒 ${lang === 'ar' ? 'اطلب الآن' : 'Commander Maintenant'}
+        </button>
+      </div>
+      <div class="pp-shipping-box">
+        <div class="pp-shipping-icon">🚚</div>
+        <div class="pp-shipping-text">${lang === 'ar' ? 'توصيل مجاني من 250 درهم' : "Livraison Gratuite dès 250 DH d'achat"}</div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('productPage').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductPage() {
+  document.getElementById('productPage').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function slidePP(dir) {
+  const imgList = window._ppImgList;
+  window._ppImgIdx = (window._ppImgIdx + dir + imgList.length) % imgList.length;
+  updatePPSlider();
+}
+
+function goPPSlide(idx) {
+  window._ppImgIdx = idx;
+  updatePPSlider();
+}
+
+function updatePPSlider() {
+  const img = document.getElementById('ppSliderImg');
+  if (img) img.src = window._ppImgList[window._ppImgIdx];
+  document.querySelectorAll('.pp-dot').forEach((d, i) => d.classList.toggle('active', i === window._ppImgIdx));
+  document.querySelectorAll('.pp-thumb').forEach((d, i) => d.classList.toggle('active', i === window._ppImgIdx));
 }
 
 // ============================================================
