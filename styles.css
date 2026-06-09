@@ -233,7 +233,7 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-showcase-track {
   position: relative;
-  width: 100%; height: 420px;
+  width: 100%; height: 560px;
 }
 .hero-showcase-track img {
   position: absolute; inset: 0;
@@ -953,7 +953,7 @@ body.fr .choice-arrow { transform: rotate(0deg); }
   .hero-heading { font-size: 1.4rem; }
   .hero-sub { font-size: 0.88rem; }
   .hero-showcase { max-width: 100%; width: 100%; }
-  .hero-showcase-track { height: 200px; }
+  .hero-showcase-track { height: 300px; }
   .hero-pill { font-size: 0.72rem; padding: 5px 12px; margin-bottom: 14px; }
   .hero-heading { font-size: clamp(1.6rem, 6vw, 2.4rem); margin-bottom: 14px; }
   .hero-sub { font-size: 0.9rem; margin-bottom: 24px; }
