@@ -619,7 +619,7 @@ body.fr .product-badge { right: auto; left: 12px; }
 /* ===================== ORDER FORM MODAL ===================== */
 .order-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,.55);
-  z-index: 400; opacity: 0; pointer-events: none; transition: opacity .3s;
+  z-index: 3000; opacity: 0; pointer-events: none; transition: opacity .3s;
 }
 .order-overlay.open { opacity: 1; pointer-events: all; }
 .order-modal {
@@ -627,7 +627,7 @@ body.fr .product-badge { right: auto; left: 12px; }
   transform: translate(-50%, -58%);
   background: #fff; border-radius: 20px;
   padding: 36px 32px; max-width: 580px; width: 94%;
-  z-index: 401; opacity: 0; pointer-events: none;
+  z-index: 3001; opacity: 0; pointer-events: none;
   transition: all .35s cubic-bezier(.4,0,.2,1);
   overflow-y: auto; max-height: 92vh;
   box-shadow: 0 24px 60px rgba(0,0,0,.2);
