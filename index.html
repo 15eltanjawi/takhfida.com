@@ -238,50 +238,56 @@
   <!-- نافذة الطلب -->
   <div class="order-overlay" id="orderOverlay" onclick="closeOrderForm()"></div>
   <div class="order-modal" id="orderModal">
-    <button class="modal-close" onclick="closeOrderForm()">✕</button>
 
     <div class="order-panel" id="panelForm">
+      <!-- Header -->
+      <div class="om-header">
+        <span class="om-header-title">🚚 LIVRAISON GRATUITE À PARTIR DE 250 DHS</span>
+        <button class="om-close" onclick="closeOrderForm()">✕</button>
+      </div>
       <!-- Cart items -->
       <div id="popupCartItems" class="popup-cart-items"></div>
       <!-- Totals -->
-      <div class="popup-totals">
+      <div class="popup-totals-box">
         <div class="popup-total-row"><span>Sous-total</span><span id="popupSubtotal">—</span></div>
         <div class="popup-total-row"><span>Expédition</span><span>?</span></div>
         <div class="popup-total-sep"></div>
         <div class="popup-total-row popup-total-final"><span>Total</span><strong id="popupTotal">—</strong></div>
       </div>
       <!-- Delivery form -->
-      <form id="orderForm" onsubmit="submitOnlineOrder(event)" novalidate>
-        <div class="popup-field">
-          <span class="pf-icon">👤</span>
-          <input type="text" id="fieldName" placeholder="Nom Complet - الاسم الكامل" required />
+      <form id="orderForm" class="om-form" onsubmit="submitOnlineOrder(event)" novalidate>
+        <div class="om-field-group">
+          <label class="om-label">Nom Complet - الاسم الكامل <span class="om-req">*</span></label>
+          <div class="om-input-wrap">
+            <span class="om-input-icon">👤</span>
+            <input type="text" id="fieldName" placeholder="Nom Complet - الاسم الكامل" required />
+          </div>
           <span class="field-error" id="errName">الرجاء إدخال الاسم</span>
         </div>
-        <div class="popup-field">
-          <span class="pf-icon">📞</span>
-          <input type="tel" id="fieldPhone" placeholder="Téléphone - هاتف" required />
+        <div class="om-field-group">
+          <label class="om-label">Téléphone - هاتف <span class="om-req">*</span></label>
+          <div class="om-input-wrap">
+            <span class="om-input-icon">📞</span>
+            <input type="tel" id="fieldPhone" placeholder="06XXXXXXXX" required />
+          </div>
           <span class="field-error" id="errPhone">الرجاء إدخال رقم هاتف صحيح</span>
         </div>
-        <div class="popup-field popup-field-select">
-          <select id="fieldCity" required>
-            <option value="">Ville / المدينة ▾</option>
-            <option value="الدار البيضاء">الدار البيضاء / Casablanca</option>
-            <option value="الرباط">الرباط / Rabat</option>
-            <option value="مراكش">مراكش / Marrakech</option>
-            <option value="فاس">فاس / Fès</option>
-            <option value="طنجة">طنجة / Tanger</option>
-            <option value="أكادير">أكادير / Agadir</option>
-            <option value="مكناس">مكناس / Meknès</option>
-            <option value="وجدة">وجدة / Oujda</option>
-            <option value="تطوان">تطوان / Tétouan</option>
-            <option value="سلا">سلا / Salé</option>
-            <option value="أخرى">أخرى / Autre ville</option>
-          </select>
+        <div class="om-field-group">
+          <label class="om-label">Ville <span class="om-req">*</span></label>
+          <div class="om-input-wrap om-select-wrap">
+            <select id="fieldCity" required>
+              <option value="" disabled selected>Ville</option>
+              <option value="ADISS">ADISS</option><option value="AFOURER">AFOURER</option><option value="AGADIR">AGADIR</option><option value="AGDZ">AGDZ</option><option value="Aghbalou-Boumia">Aghbalou-Boumia</option><option value="AGLOU">AGLOU</option><option value="Agourai">Agourai</option><option value="Ahfir">Ahfir</option><option value="AIN AICHA">AIN AICHA</option><option value="AIN DEFALI">AIN DEFALI</option><option value="Ain El Aouda">Ain El Aouda</option><option value="Ain Harrouda">Ain Harrouda</option><option value="AIT MELLOUL">AIT MELLOUL</option><option value="AIT OURIR">AIT OURIR</option><option value="Al hoceima">Al hoceima</option><option value="ALMINA">ALMINA</option><option value="AMIZMIZ">AMIZMIZ</option><option value="ANZA">ANZA</option><option value="Asilah">Asilah</option><option value="Azemmour">Azemmour</option><option value="Azilal">Azilal</option><option value="Azrou">Azrou</option><option value="BEN AHMED">BEN AHMED</option><option value="BEN GUERIR">BEN GUERIR</option><option value="Benslimane">Benslimane</option><option value="Berkane">Berkane</option><option value="Berrechid">Berrechid</option><option value="BENI MELLAL">BENI MELLAL</option><option value="Bni Bouayach">Bni Bouayach</option><option value="Bouskoura">Bouskoura</option><option value="Bouznika">Bouznika</option><option value="CASABLANCA">CASABLANCA</option><option value="CHEFCHAOUEN">CHEFCHAOUEN</option><option value="CHICHAOUA">CHICHAOUA</option><option value="DAKHLA">DAKHLA</option><option value="Demnate">Demnate</option><option value="Driouch">Driouch</option><option value="El Hajeb">El Hajeb</option><option value="El Harhoura">El Harhoura</option><option value="Eljadida">Eljadida</option><option value="ERFOUD">ERFOUD</option><option value="ERRACHIDIA">ERRACHIDIA</option><option value="ESSAOUIRA">ESSAOUIRA</option><option value="Fes">Fes</option><option value="Figuig">Figuig</option><option value="Fnideq">Fnideq</option><option value="FQUIH BEN SALAH">FQUIH BEN SALAH</option><option value="GOULMIMA">GOULMIMA</option><option value="GUELMIM">GUELMIM</option><option value="Guercif">Guercif</option><option value="Had soualem">Had soualem</option><option value="Ifrane">Ifrane</option><option value="IMINTANOUTE">IMINTANOUTE</option><option value="INZEGANE">INZEGANE</option><option value="Jerada">Jerada</option><option value="KALAAT M'GOUNA">KALAAT M'GOUNA</option><option value="Kenitra">Kenitra</option><option value="KHENIFRA">KHENIFRA</option><option value="Khmisset">Khmisset</option><option value="KHOURIBGA">KHOURIBGA</option><option value="Ksar L'kbir">Ksar L'kbir</option><option value="LAAYOUNE">LAAYOUNE</option><option value="Larache">Larache</option><option value="MARRAKECH">MARRAKECH</option><option value="Martil">Martil</option><option value="Mdiq">Mdiq</option><option value="Mediouna">Mediouna</option><option value="Meknes">Meknes</option><option value="MERZOUGA">MERZOUGA</option><option value="MIDELT">MIDELT</option><option value="MIRLEFT">MIRLEFT</option><option value="Missour">Missour</option><option value="Mohammadia">Mohammadia</option><option value="Moulay bousselham">Moulay bousselham</option><option value="Nador">Nador</option><option value="OUARZAZATE">OUARZAZATE</option><option value="Ouazzane">Ouazzane</option><option value="OUJDA">OUJDA</option><option value="Oulad Frej">Oulad Frej</option><option value="OULAD TAIMA">OULAD TAIMA</option><option value="Rabat">Rabat</option><option value="RISSANI">RISSANI</option><option value="Rommani">Rommani</option><option value="SAFI">SAFI</option><option value="Saidia">Saidia</option><option value="Salé">Salé</option><option value="Sefrou">Sefrou</option><option value="Settat">Settat</option><option value="Sidi Bennour">Sidi Bennour</option><option value="Sidi Kacem">Sidi Kacem</option><option value="Sidi slimane">Sidi slimane</option><option value="Skhirat">Skhirat</option><option value="SKOURA">SKOURA</option><option value="Smara">Smara</option><option value="Tanger">Tanger</option><option value="Taounate">Taounate</option><option value="Taourirt">Taourirt</option><option value="TAROUDANTE">TAROUDANTE</option><option value="Tata">Tata</option><option value="Taza">Taza</option><option value="Temara">Temara</option><option value="Tetouan">Tetouan</option><option value="Tifelt">Tifelt</option><option value="TINGHIR">TINGHIR</option><option value="TIZNIT">TIZNIT</option><option value="YOUSSOUFIA">YOUSSOUFIA</option><option value="ZAGORA">ZAGORA</option><option value="Zaio">Zaio</option>
+            </select>
+          </div>
           <span class="field-error" id="errCity">الرجاء إدخال المدينة</span>
         </div>
-        <div class="popup-field">
-          <span class="pf-icon">📍</span>
-          <input type="text" id="fieldAddress" placeholder="Adresse - عنوان التوصيل" required />
+        <div class="om-field-group">
+          <label class="om-label">Addresse - عنوان <span class="om-req">*</span></label>
+          <div class="om-input-wrap">
+            <span class="om-input-icon">📍</span>
+            <input type="text" id="fieldAddress" placeholder="رقم الشقة، الحي، الشارع، الرمز البريدي..." required />
+          </div>
           <span class="field-error" id="errAddress">الرجاء إدخال العنوان</span>
         </div>
         <button type="submit" class="btn-popup-commander">
@@ -291,6 +297,10 @@
     </div>
 
     <div class="order-panel" id="panelSuccess" style="display:none">
+      <div class="om-header">
+        <span></span>
+        <button class="om-close" onclick="closeOrderForm()">✕</button>
+      </div>
       <div class="success-body">
         <div class="success-icon">🎉</div>
         <h3 data-i18n="successTitle">تم استلام طلبك!</h3>
@@ -302,10 +312,39 @@
     </div>
   </div>
 
-<!-- Floating WhatsApp button -->
+<!-- Floating WhatsApp button (desktop only) -->
 <a href="https://wa.me/212675450302" class="wa-float" target="_blank" aria-label="WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<!-- Mobile bottom navigation -->
+<nav class="mobile-bottom-nav" id="mobileBottomNav">
+  <a class="mbn-item" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+    <span data-i18n="navHome">الرئيسية</span>
+  </a>
+  <a class="mbn-item" href="#products" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'}); return false;">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    <span data-i18n="navProducts">المنتجات</span>
+  </a>
+  <a class="mbn-item" href="https://wa.me/212675450302" target="_blank">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>واتساب</span>
+  </a>
+  <button class="mbn-item mbn-cart" onclick="toggleCartSidebar()">
+    <div style="position:relative;display:inline-flex;">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="mbn-cart-count" id="mbnCartCount" style="display:none">0</span>
+    </div>
+    <span data-i18n="navCart">السلة</span>
+  </button>
+</nav>
+
+<!-- Product page sticky bottom CTA (mobile) -->
+<div class="pp-mobile-cta" id="ppMobileCta" style="display:none">
+  <button class="pp-mobile-cta-cart" id="ppMobileCartBtn">أضف للسلة</button>
+  <button class="pp-mobile-cta-order" id="ppMobileOrderBtn">🛒 اطلب الآن</button>
+</div>
 
 <script src="script.js"></script>
 </body>

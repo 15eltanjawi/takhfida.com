@@ -6,6 +6,7 @@ const translations = {
     dir: 'rtl',
     topOrder: 'اطلب عبر واتساب',
     topFree: 'توصيل لجميع المدن',
+    navHome: 'الرئيسية',
     navProducts: 'المنتجات',
     navAbout: 'من نحن',
     navContact: 'تواصل معنا',
@@ -123,6 +124,7 @@ const translations = {
     dir: 'ltr',
     topOrder: 'Commander sur WhatsApp',
     topFree: 'Livraison dans toutes les villes',
+    navHome: 'Accueil',
     navProducts: 'Produits',
     navAbout: 'À propos',
     navContact: 'Contact',
@@ -659,6 +661,8 @@ function renderCart() {
   const total = getTotal();
   countEl.textContent = count;
   totalEl.textContent = `${total} ${t.currency}`;
+  const mbnCount = document.getElementById('mbnCartCount');
+  if (mbnCount) { mbnCount.textContent = count; mbnCount.style.display = count > 0 ? 'flex' : 'none'; }
   footerEl.style.display = cart.length ? 'block' : 'none';
   const orderNowTotalEl = document.getElementById('btnOrderNowTotal');
   if (orderNowTotalEl) orderNowTotalEl.textContent = `${total} ${t.currency}`;
@@ -1139,11 +1143,29 @@ function openProductPage(id) {
 
   document.getElementById('productPage').classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  // Wire mobile sticky CTA buttons
+  const mobileCta = document.getElementById('ppMobileCta');
+  const mobileCartBtn = document.getElementById('ppMobileCartBtn');
+  const mobileOrderBtn = document.getElementById('ppMobileOrderBtn');
+  if (mobileCta) {
+    mobileCta.style.display = 'flex';
+    mobileCartBtn.textContent = t.addToCart;
+    mobileOrderBtn.textContent = '🛒 ' + (lang === 'ar' ? 'اطلب الآن' : 'Commander Maintenant');
+    mobileCartBtn.onclick = () => { addToCartQty(p.id); closeProductPage(); };
+    mobileOrderBtn.onclick = () => { openOrderPopup(p.id); };
+  }
+  const nav = document.getElementById('mobileBottomNav');
+  if (nav) nav.classList.add('hidden');
 }
 
 function closeProductPage() {
   document.getElementById('productPage').classList.remove('open');
   document.body.style.overflow = '';
+  const mobileCta = document.getElementById('ppMobileCta');
+  if (mobileCta) mobileCta.style.display = 'none';
+  const nav = document.getElementById('mobileBottomNav');
+  if (nav) nav.classList.remove('hidden');
 }
 
 function slidePP(dir) {
