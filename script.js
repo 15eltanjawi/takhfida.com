@@ -51,7 +51,7 @@ const translations = {
     rv1: 'مشترية موثقة', rv2: 'مشترية موثقة', rv3: 'مشترية موثقة',
     contactTag: 'تواصلي معنا',
     contactTitle: 'اطلب عبر واتساب',
-    contactSub: 'أرسلي لنا رسالة وسنرد عليكِ في دقائق.',
+    contactSub: 'أرسل لنا رسالة وسنرد عليكِ في دقائق.',
     wa: 'واتساب', waSub: 'تحدثي معنا مباشرة',
     call: 'اتصل بنا', callSub: '0675450302',
     email: 'البريد الإلكتروني', emailSub: 'your@email.com',
