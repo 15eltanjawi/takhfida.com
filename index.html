@@ -49,11 +49,7 @@
       <a href="#" class="logo">
         <img src="images/logo website-modified.png" alt="تخفيضة" class="logo-img" />
       </a>
-      <nav class="nav-links">
-        <a href="#products" data-i18n="navProducts">المنتجات</a>
-        <a href="#about"    data-i18n="navAbout">من نحن</a>
-        <a href="#contact"  data-i18n="navContact">تواصل معنا</a>
-      </nav>
+      <nav class="nav-links"></nav>
       <button class="cart-btn" onclick="toggleCart()">
         <svg stroke-width="2" focusable="false" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
           <path d="M9.182 18.454a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.818 0Zm7.272 0a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.819 0Z" fill="currentColor"/>
@@ -91,9 +87,6 @@
 
     <!-- القائمة الجانبية للموبايل -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#products" data-i18n="navProducts" onclick="toggleMenu()">المنتجات</a>
-      <a href="#about"    data-i18n="navAbout"    onclick="toggleMenu()">من نحن</a>
-      <a href="#contact"  data-i18n="navContact"  onclick="toggleMenu()">تواصل معنا</a>
       <div class="mobile-lang">
         <button class="lang-btn active" data-lang="ar" onclick="setLang('ar');toggleMenu()">AR</button>
         <button class="lang-btn"        data-lang="fr" onclick="setLang('fr');toggleMenu()">FR</button>
@@ -126,8 +119,7 @@
     <div class="products-toolbar">
       <span class="products-count" id="productsCount"></span>
       <select class="products-sort" id="productsSort" onchange="sortProducts(this.value)">
-        <option value="default" data-i18n="sortDefault">الترتيب</option>
-        <option value="price-asc" data-i18n="sortPriceAsc">السعر: من الأقل</option>
+<option value="price-asc" data-i18n="sortPriceAsc">السعر: من الأقل</option>
         <option value="price-desc" data-i18n="sortPriceDesc">السعر: من الأعلى</option>
         <option value="name-asc" data-i18n="sortNameAsc">الاسم: أ — ي</option>
       </select>
