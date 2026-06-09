@@ -1084,8 +1084,7 @@ function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('
 // INIT
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
-  renderProducts();
-  renderLogoPortfolio();
+  setLang('ar');
   renderCart();
 });
 
