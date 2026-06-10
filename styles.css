@@ -67,8 +67,8 @@ a { text-decoration: none; color: inherit; }
 /* ===================== NAVBAR ===================== */
 .navbar {
   position: sticky; top: 40px; z-index: 100;
-  background: rgba(255,251,247,.97); backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 rgba(200,83,110,.1), 0 4px 20px rgba(0,0,0,.06);
+  background: #519A66;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
 }
 .navbar::after {
   content: '';
