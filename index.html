@@ -73,6 +73,11 @@
           <option value="nutrition" data-i18n="tabNutrition">التغذية</option>
           <option value="personal"  data-i18n="tabPersonal">العناية الشخصية</option>
         </select>
+        <span class="search-divider"></span>
+        <select class="products-sort search-cat-select" id="productsSort" onchange="sortProducts(this.value)">
+          <option value="price-asc" data-i18n="sortPriceAsc">السعر: من الأقل</option>
+          <option value="price-desc" data-i18n="sortPriceDesc">السعر: من الأعلى</option>
+        </select>
         <div class="search-input-group">
           <input type="text" id="searchInput" class="search-input"
                  placeholder="ابحثي عن منتج..." oninput="runSearch()" />
@@ -111,13 +116,6 @@
 
   <!-- المنتجات -->
   <section class="products-section" id="products">
-    <div class="products-toolbar">
-      <span class="products-count" id="productsCount"></span>
-      <select class="products-sort" id="productsSort" onchange="sortProducts(this.value)">
-        <option value="price-asc" data-i18n="sortPriceAsc">السعر: من الأقل</option>
-        <option value="price-desc" data-i18n="sortPriceDesc">السعر: من الأعلى</option>
-      </select>
-    </div>
     <div class="products-grid" id="productsGrid"></div>
   </section>
 

@@ -167,6 +167,9 @@ a { text-decoration: none; color: inherit; }
   font-family: 'Cairo', sans-serif; font-size: 0.83rem; font-weight: 600;
   color: var(--dark); cursor: pointer; flex-shrink: 0; padding: 4px 6px;
 }
+.search-divider {
+  width: 1px; height: 20px; background: #e5e7eb; flex-shrink: 0;
+}
 .search-input-group { display: flex; flex: 1; align-items: center; gap: 6px; }
 .search-input {
   flex: 1; border: none; outline: none;
@@ -1064,8 +1067,9 @@ body.fr .choice-arrow { transform: rotate(0deg); }
 
   /* Search */
   .search-bar-inner { flex-wrap: wrap; border-radius: 14px; padding: 6px 10px; }
-  .search-cat-select { width: 100%; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; margin-bottom: 4px; }
-  .search-input-group { width: 100%; }
+  .search-cat-select { width: auto; flex: 1; border-bottom: none; padding-bottom: 4px; margin-bottom: 0; }
+  .search-divider { display: none; }
+  .search-input-group { width: 100%; order: 3; border-top: 1px solid #e5e7eb; padding-top: 6px; margin-top: 2px; }
 
   /* Logo portfolio */
   .logo-section { padding: 32px 12px 48px; }
