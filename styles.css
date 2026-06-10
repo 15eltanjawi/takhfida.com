@@ -1603,17 +1603,21 @@ body.fr .wa-float, body:not(.fr) .wa-float { right: 24px; left: auto; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .product-page-back {
-  background: none;
+  background: linear-gradient(135deg, var(--rose), var(--orange));
   border: none;
-  font-size: 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
   cursor: pointer;
-  color: var(--dark);
-  width: 42px; height: 42px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%;
-  transition: background 0.2s;
+  color: #fff;
+  padding: 8px 16px;
+  display: flex; align-items: center; gap: 6px;
+  border-radius: 50px;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
-.product-page-back:hover { background: #f5f5f5; }
+.product-page-back:hover { opacity: 0.88; transform: scale(1.04); }
 .product-page-logo {
   display: flex; align-items: center; flex-shrink: 0;
 }
