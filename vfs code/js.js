@@ -426,6 +426,23 @@ function tryClickGoHome(){
 new MutationObserver(()=>tryClickGoHome()).observe(document.body,{childList:true,subtree:true});
 setInterval(tryClickGoHome,1500);
 
+// Auto-submit Cloudflare captcha dialog after 10 seconds
+let _cfCooldown=false;
+function trySubmitCaptchaDialog(){
+  try{
+    if(_cfCooldown)return;
+    const dialog=document.querySelector('app-cloudflare-dialog');
+    if(!dialog)return;
+    const btn=Array.from(dialog.querySelectorAll('button')).find(b=>b.textContent.trim().toLowerCase()==='submit'&&!b.disabled&&b.offsetParent!==null);
+    if(!btn)return;
+    _cfCooldown=true;
+    _rt(()=>{_cfCooldown=false;},15000);
+    _rt(()=>{try{btn.click();}catch(e){}},10000);
+  }catch(e){}
+}
+new MutationObserver(()=>trySubmitCaptchaDialog()).observe(document.body,{childList:true,subtree:true});
+setInterval(trySubmitCaptchaDialog,2000);
+
 // Slot alert
 let _af2=false;
 new MutationObserver(()=>{try{if(_af2)return;if(/earliest available slot for/i.test(document.body.innerText||'')){_af2=true;playAlert();_rt(()=>{_af2=false;},10000);}}catch(e){}}).observe(document.body,{childList:true,subtree:true,characterData:true});
