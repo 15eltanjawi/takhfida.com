@@ -188,7 +188,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ===================== HERO SECTION ===================== */
 .hero-section {
-  background: url('images/hero page background.jpg') center center / cover no-repeat;
+  background: url('images/hero page background.png') center center / cover no-repeat;
   padding: 10px 24px 14px;
   overflow: hidden;
   position: relative;
