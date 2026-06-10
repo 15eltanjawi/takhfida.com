@@ -188,15 +188,21 @@ a { text-decoration: none; color: inherit; }
 
 /* ===================== HERO SECTION ===================== */
 .hero-section {
-  background: url('images/new hero page.png') center center / cover no-repeat;
   padding: 10px 24px 14px;
   overflow: hidden;
   position: relative;
+  background: #000;
 }
-.hero-section::before {
-  content: '';
+.hero-video {
   position: absolute; inset: 0;
-  background: rgba(0, 0, 0, 0.38);
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.38);
+  z-index: 1;
   pointer-events: none;
 }
 .hero-inner {
@@ -232,7 +238,7 @@ a { text-decoration: none; color: inherit; }
   );
   animation: heroShine 3.5s ease-in-out infinite;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 @keyframes heroFadeIn {
   from { opacity: 0; transform: translateY(22px); }
@@ -989,13 +995,11 @@ body.fr .choice-arrow { transform: rotate(0deg); }
 @media (max-width: 768px) {
   /* Hero */
   .hero-section {
-    background-size: 100% auto;
-    background-position: top center;
-    background-color: #1c2e1c;
-    min-height: calc(46.5vw + 120px);
+    min-height: 280px;
+    padding: 10px 16px 24px;
   }
   .hero-inner {
-    padding-top: 46.5vw;
+    padding-top: 20px;
     padding-bottom: 24px;
     padding-left: 16px;
     padding-right: 16px;
@@ -1096,11 +1100,11 @@ body.fr .choice-arrow { transform: rotate(0deg); }
 @media (max-width: 480px) {
   /* Hero */
   .hero-section {
-    padding: 0;
-    min-height: calc(46.5vw + 100px);
+    padding: 10px 14px 20px;
+    min-height: 240px;
   }
   .hero-inner {
-    padding-top: 46.5vw;
+    padding-top: 16px;
     padding-bottom: 20px;
     padding-left: 14px;
     padding-right: 14px;
