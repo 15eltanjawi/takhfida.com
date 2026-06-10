@@ -1052,7 +1052,7 @@ body.fr .choice-arrow { transform: rotate(0deg); }
   .nav-inner { padding: 0 12px; height: 58px; position: relative; justify-content: space-between; }
   .logo { position: absolute; left: 50%; transform: translateX(-50%); }
   .logo-img { height: 46px; }
-  .navbar { background: #fff; box-shadow: 0 1px 0 #e5e7eb; }
+  .navbar { background: #519A66; box-shadow: 0 1px 0 rgba(0,0,0,0.1); }
   .search-bar { padding: 8px 16px; }
   .search-bar-inner { padding: 4px 4px 4px 12px; }
   .search-input { font-size: 0.85rem; }
