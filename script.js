@@ -606,7 +606,7 @@ function stopImageCycle(el, id) {
 // RENDER PRODUCTS
 // ============================================================
 let currentFilter = 'all';
-let currentSort = 'default';
+let currentSort = 'price-asc';
 
 function sortProducts(val) {
   currentSort = val;
