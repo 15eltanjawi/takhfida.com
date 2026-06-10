@@ -1472,9 +1472,9 @@ body.fr .wa-float, body:not(.fr) .wa-float { right: 24px; left: auto; }
     display: flex;
     position: fixed; bottom: 0; left: 0; right: 0;
     z-index: 1500;
-    background: #fff;
-    border-top: 1px solid #e5e7eb;
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    background: #237227;
+    border-top: none;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
     height: 62px;
     align-items: stretch;
   }
