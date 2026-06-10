@@ -247,16 +247,18 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
   z-index: 2;
 }
-@keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes heroTextLoop {
+  0%        { opacity: 0; transform: translateY(20px); }
+  15%       { opacity: 1; transform: translateY(0); }
+  75%       { opacity: 1; transform: translateY(0); }
+  90%, 100% { opacity: 0; transform: translateY(-10px); }
 }
 .hero-text { text-align: center; }
 .hero-heading {
-  animation: heroFadeIn 0.9s ease forwards;
+  animation: heroTextLoop 5s ease-in-out infinite;
 }
 .hero-sub {
-  animation: heroFadeIn 0.9s ease 0.4s forwards;
+  animation: heroTextLoop 5s ease-in-out 0.5s infinite;
   opacity: 0;
 }
 .hero-heading {
