@@ -13,6 +13,9 @@
 
 (function(){"use strict";
 
+// Block script on review-pay page
+if(/\/review-pay/i.test(location.pathname))return;
+
 // ★ LOGIN ACCOUNTS
 const defaultLogins=()=>([
   {email:"said.zarouq@outlook.com",        password:"Azol@2000"},
