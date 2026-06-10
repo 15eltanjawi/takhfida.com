@@ -148,6 +148,30 @@ if(document.readyState==='complete')_rt(insertLoginButtons,800);else window.addE
 // Watchdog: auto-login only when bot is already running and gets kicked out
 _ri(()=>{try{if(isCaptcha())return;if(onLogin()&&!loginBusy&&isRunning){stopMode();_rt(()=>doLogin(getLogin()),800);}}catch(e){}},5000);
 
+// Auto-login: cycle through accounts automatically on login page
+let _alActive=false;
+async function startAutoLogin(){
+  if(_alActive||loginBusy||!onLogin()||isCaptcha())return;
+  _alActive=true;
+  try{
+    await doLogin(getLogin());
+    // Wait up to 10s to detect successful navigation away from login page
+    for(let i=0;i<20;i++){await wait(500);if(!onLogin()){_alActive=false;return;}}
+    // Still on login page — detect visible error element
+    const err=document.querySelector('mat-error,.mat-mdc-form-field-error,[role="alert"],.mat-mdc-snack-bar-label,.mat-mdc-snack-bar-container');
+    const hasError=!!(err&&err.offsetParent!==null&&err.textContent.trim());
+    nextLogin();
+    // 5s on error, 3–4s on no error
+    await wait(hasError?5000:jit(3000,1000));
+  }catch(e){}
+  _alActive=false;
+  if(onLogin())_rt(startAutoLogin,300);
+}
+// Trigger when login form appears via DOM mutation or on initial load
+new MutationObserver(()=>{if(onLogin()&&!_alActive&&!loginBusy)_rt(startAutoLogin,1200);}).observe(document.body,{childList:true,subtree:true});
+if(document.readyState==='complete'&&onLogin())_rt(startAutoLogin,1500);
+else window.addEventListener('load',()=>{if(onLogin())_rt(startAutoLogin,1500);},{once:true});
+
 // Form fill helpers
 function findByLabel(txt){try{const l=Array.from(document.querySelectorAll('label,mat-label,.form-label')).find(l=>l.textContent.trim().toLowerCase().includes(txt.toLowerCase()));if(!l)return null;const id=l.getAttribute('for');if(id)return document.getElementById(id);return(l.closest('mat-form-field,.form-group,div')||l.parentElement)?.querySelector('input,select,textarea')||null;}catch(e){return null;}}
 const toISO=s=>{const m=s&&s.trim().match(/^(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})$/);return m?`${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`:s||'';};
