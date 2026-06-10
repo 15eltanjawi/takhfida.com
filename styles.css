@@ -188,7 +188,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ===================== HERO SECTION ===================== */
 .hero-section {
-  background: url('images/hero page background.png') center center / cover no-repeat;
+  background: url('images/new hero page.png') center center / cover no-repeat;
   padding: 10px 24px 14px;
   overflow: hidden;
   position: relative;
@@ -1058,7 +1058,12 @@ body.fr .choice-arrow { transform: rotate(0deg); }
 
 @media (max-width: 480px) {
   /* Hero */
-  .hero-section { padding: 28px 14px 40px; }
+  .hero-section {
+    padding: 28px 14px 40px;
+    background-size: contain;
+    background-position: center center;
+    background-color: #1c2e1c;
+  }
   .hero-logo-big { width: 120px; height: 120px; }
   .hero-logo-aura { inset: -24px; }
   .hero-heading { font-size: 1.5rem; }
