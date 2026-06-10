@@ -1077,7 +1077,7 @@ function openModal(id) {
           🛒 ${lang === 'ar' ? 'اطلب الآن' : 'Commander Maintenant'}
         </button>
         <div class="modal-shipping-info">
-          🚚 ${lang === 'ar' ? 'توصيل مجاني من 250 درهم' : "Livraison Gratuite dès 250 DH d'achat"}
+          🚚 ${lang === 'ar' ? 'توصيل مجاني من 250 درهم · 35 درهم للطلبات الأقل' : "Livraison Gratuite dès 250 DH · 35 DH en dessous"}
         </div>
       </div>
     </div>
@@ -1148,7 +1148,7 @@ function openProductPage(id) {
       </div>
       <div class="pp-shipping-box">
         <div class="pp-shipping-icon">🚚</div>
-        <div class="pp-shipping-text">${lang === 'ar' ? 'توصيل مجاني من 250 درهم' : "Livraison Gratuite dès 250 DH d'achat"}</div>
+        <div class="pp-shipping-text">${lang === 'ar' ? 'توصيل مجاني من 250 درهم · 35 درهم للطلبات الأقل' : "Livraison Gratuite dès 250 DH · 35 DH en dessous"}</div>
       </div>
     </div>
   `;
