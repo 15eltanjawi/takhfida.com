@@ -150,8 +150,8 @@ a { text-decoration: none; color: inherit; }
 
 /* ===================== SEARCH BAR ===================== */
 .search-bar {
-  background: rgba(255,251,247,.95);
-  border-top: 1px solid rgba(200,83,110,.08);
+  background: #519A66;
+  border-top: none;
   padding: 10px 24px;
 }
 .search-bar-inner {
