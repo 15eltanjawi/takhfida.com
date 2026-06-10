@@ -513,16 +513,8 @@ body.fr .product-badge { right: auto; left: 12px; }
 
 /* ===================== CONTACT SECTION ===================== */
 .section-divider-bar {
-  display: flex; align-items: center; justify-content: center;
-  gap: 24px; flex-wrap: wrap;
-  background: linear-gradient(135deg, var(--rose), var(--orange));
-  padding: 16px 24px;
-  color: #fff; font-family: 'Cairo', sans-serif;
-  font-size: 0.95rem; font-weight: 700;
-}
-.divider-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: rgba(255,255,255,0.5); flex-shrink: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--rose), var(--orange));
 }
 .contact-section { padding: 80px 24px; background: #fffbf7; }
 .contact-section .section-header { text-align: center; margin-bottom: 40px; }
