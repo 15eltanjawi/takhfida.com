@@ -539,7 +539,7 @@ body.fr .product-badge { right: auto; left: 12px; }
   max-width: 1200px; margin: 0 auto;
   display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
 }
-.footer-logo { display: inline-block; margin-bottom: 14px; }
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
 .logo-icon-wrap {
   width: 40px; height: 40px; border-radius: 10px;
   background: linear-gradient(135deg, var(--rose), var(--orange));
